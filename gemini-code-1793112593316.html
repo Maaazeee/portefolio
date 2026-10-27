@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amine, développeur full-stack à Alger</title>
+    <meta name="description" content="Amine, développeur full-stack à Alger. Applications sur-mesure, tableaux de bord et automatisations pour les entreprises.">
+    <meta name="theme-color" content="#1F36D8">
+    <link rel="canonical" href="https://amine-dev.dz/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Amine, développeur full-stack à Alger">
+    <meta property="og:description" content="Applications sur-mesure, tableaux de bord et automatisations pour les entreprises.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amine-dev.dz/">
+    <meta property="og:locale" content="fr_DZ">
+    <meta property="og:site_name" content="Amine - Développeur full-stack">
+    <meta property="og:image" content="https://amine-dev.dz/og-cover.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amine, développeur full-stack à Alger">
+    <meta name="twitter:description" content="Applications sur-mesure, tableaux de bord et automatisations pour les entreprises.">
+    
+    <!-- Favicon & Apple Touch Icon basés sur le Logo 3 -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F36D8'/%3E%3Cpath d='M10 52h44' stroke='%23F2F3EF' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M12 28l11 7-11 7M31 24l-6 20' stroke='%23F2F3EF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M16 36c0-7 1-13 3-18M19 18c-4-3-7-1-9 2M19 18c-2-4 2-6 5-5M19 18c4-2 7 0 8 3' stroke='%23F2F3EF' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 24a8 8 0 0 1 16 0' stroke='%23FFC53D' stroke-width='3.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M34 33c2 6 8 9 13 6 4-2 6-6 6-11M49 27l4 1 1 4' stroke='%23FFC53D' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231F36D8'/%3E%3Cg transform='translate(18, 22) scale(2.25)'%3E%3Cpath d='M10 52h44' stroke='%23F2F3EF' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M12 28l11 7-11 7M31 24l-6 20' stroke='%23F2F3EF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M16 36c0-7 1-13 3-18M19 18c-4-3-7-1-9 2M19 18c-2-4 2-6 5-5M19 18c4-2 7 0 8 3' stroke='%23F2F3EF' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M35 24a8 8 0 0 1 16 0' stroke='%23FFC53D' stroke-width='3.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M34 33c2 6 8 9 13 6 4-2 6-6 6-11M49 27l4 1 1 4' stroke='%23FFC53D' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Données structurées Schema.org (SEO Local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Amine - Développeur Full-Stack",
+      "description": "Conception d'applications web sur-mesure, tableaux de bord et automatisations pour les entreprises.",
+      "url": "https://amine-dev.dz/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alger",
+        "addressCountry": "DZ"
+      },
+      "areaServed": ["DZ", "FR"],
+      "knowsAbout": ["Java", "PHP", "JavaScript", "TypeScript", "Supabase", "Discord API", "Unity", "C#"]
+    }
+    </script>
+
+    <script>document.documentElement.classList.add('js');</script>
+    <style>
+        :root {
+            --mer: #1F36D8;        /* bleu Méditerranée */
+            --mer-fonce: #1428A8;
+            --chaux: #F2F3EF;      /* blanc des façades d'Alger */
+            --brume: #E6E9F3;
+            --encre: #0E1230;
+            --soleil: #FFC53D;
+            --ciel: #C9D3FF;
+            --muted: #50557A;
+            --erreur: #FF6B6B;
+            --ease: cubic-bezier(.2, .8, .2, 1);
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+        body {
+            margin: 0; background: var(--chaux); color: var(--encre);
+            font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+            font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, p { margin: 0; }
+        a { color: inherit; }
+        .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+        :focus-visible { outline: 3px solid var(--soleil); outline-offset: 3px; border-radius: 6px; }
+
+        /* ---------- Navigation & Logo ---------- */
+        .nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 50;
+            background: var(--mer); color: var(--chaux);
+            transition: transform .4s var(--ease), box-shadow .3s;
+        }
+        .nav--scrolled { box-shadow: 0 10px 30px -10px rgba(14, 18, 48, .35); }
+        .nav--hidden { transform: translateY(-100%); }
+        .nav__bar { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .brand {
+            display: inline-flex; align-items: center; gap: 12px;
+            font-weight: 800; font-size: 1.35rem; letter-spacing: -.02em; text-decoration: none;
+        }
+        .brand__logo {
+            width: 42px; height: 34px; flex-shrink: 0;
+            transition: transform .4s var(--ease);
+        }
+        .brand__logo-sun {
+            transform-origin: 43px 26px;
+            transition: transform .5s var(--ease);
+        }
+        .brand:hover .brand__logo { transform: translateY(-1px); }
+        .brand:hover .brand__logo-sun { transform: scale(1.08) rotate(4deg); }
+        
+        .nav__links { display: flex; align-items: center; gap: 34px; font-weight: 500; font-size: .98rem; }
+        .nav__links a { text-decoration: none; opacity: .85; transition: opacity .2s; }
+        .nav__links a:hover { opacity: 1; }
+        .nav__links .nav__cta {
+            opacity: 1; background: var(--chaux); color: var(--mer);
+            padding: 9px 20px; border-radius: 999px; font-weight: 600;
+            transition: background .2s, color .2s, transform .2s;
+        }
+        .nav__links .nav__cta:hover { background: var(--soleil); color: var(--encre); transform: translateY(-1px); }
+        .nav__toggle {
+            display: none; background: none; border: 0; color: inherit;
+            font: inherit; font-weight: 600; padding: 8px 0; cursor: pointer;
+        }
+
+        /* ---------- Boutons ---------- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 30px; border-radius: 999px; border: 0; font: inherit; font-weight: 600;
+            text-decoration: none; cursor: pointer;
+            transition: transform .25s var(--ease), background .25s, color .25s, opacity .25s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn--sun { background: var(--soleil); color: var(--encre); }
+        .btn--sun:hover { background: #fff; }
+        .btn--line { box-shadow: inset 0 0 0 1.5px rgba(242, 243, 239, .55); color: var(--chaux); }
+        .btn--line:hover { background: var(--chaux); color: var(--mer); }
+        .btn--mer { background: var(--mer); color: var(--chaux); }
+        .btn--mer:hover { background: var(--encre); }
+        .btn[disabled] { opacity: .35; pointer-events: none; }
+
+        /* ---------- Hero ---------- */
+        .hero { position: relative; background: var(--mer); color: var(--chaux); padding: 132px 0 0; overflow: hidden; }
+        .hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; padding-bottom: 150px; }
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.8vw, 5.2rem); line-height: 1.02; letter-spacing: -.03em; font-weight: 700;
+            font-variation-settings: "wdth" 84, "opsz" 96;
+        }
+        .ln { display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em; }
+        .ln > span { display: block; transform: translateY(112%); animation: rise 1s var(--ease) forwards; animation-delay: var(--d, 0s); }
+        .ln--soft > span { color: rgba(242, 243, 239, .55); }
+        .hero__lead { margin-top: 28px; max-width: 34em; font-size: 1.18rem; line-height: 1.55; color: rgba(242, 243, 239, .88); }
+        .hero__actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; }
+        .load { opacity: 0; transform: translateY(18px); animation: fade-up .9s var(--ease) forwards; animation-delay: var(--d, 0s); }
+        @keyframes rise { to { transform: none; } }
+        @keyframes fade-up { to { opacity: 1; transform: none; } }
+
+        /* Bloc interactif : liste à cocher */
+        .check {
+            background: var(--chaux); color: var(--encre); border-radius: 22px; padding: 30px 30px 26px;
+            transform: rotate(1.6deg); box-shadow: 0 40px 70px -24px rgba(6, 12, 70, .6);
+        }
+        .check.load { transform: translateY(18px) rotate(1.6deg); animation-name: fade-up-tilt; }
+        @keyframes fade-up-tilt { to { opacity: 1; transform: rotate(1.6deg); } }
+        .check__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+        .check h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+        .check__reset {
+            background: none; border: 0; padding: 0; font: inherit; font-size: .82rem;
+            color: var(--muted); text-decoration: underline; cursor: pointer; opacity: 0; pointer-events: none;
+            transition: opacity .2s, color .2s;
+        }
+        .check__reset.visible { opacity: 1; pointer-events: auto; }
+        .check__reset:hover { color: var(--mer); }
+        .check__hint { color: var(--muted); font-size: .95rem; margin: 6px 0 14px; }
+        .row {
+            display: grid; grid-template-columns: 28px 1fr auto; gap: 14px; align-items: center; width: 100%;
+            padding: 13px 0; background: none; border: 0; border-top: 1px solid rgba(14, 18, 48, .14);
+            font: inherit; color: inherit; text-align: left; cursor: pointer;
+        }
+        .row__box { width: 28px; height: 28px; border: 2px solid var(--encre); border-radius: 8px; display: grid; place-items: center; transition: background .25s, transform .25s var(--ease); }
+        .row:hover .row__box { transform: scale(1.08); }
+        .row__box svg { width: 16px; height: 16px; fill: none; stroke: var(--encre); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 22; stroke-dashoffset: 22; transition: stroke-dashoffset .35s var(--ease) .05s; }
+        .row[aria-checked="true"] .row__box { background: var(--soleil); }
+        .row[aria-checked="true"] .row__box svg { stroke-dashoffset: 0; }
+        .row__label { position: relative; justify-self: start; line-height: 1.3; transition: color .3s; }
+        .row__label::after { content: ''; position: absolute; left: 0; right: 0; top: 52%; height: 2px; background: var(--mer); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+        .row[aria-checked="true"] .row__label { color: var(--muted); }
+        .row[aria-checked="true"] .row__label::after { transform: scaleX(1); }
+        .row__hrs { font-variant-numeric: tabular-nums; color: var(--muted); font-size: .95rem; }
+        .check__result { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: 8px; padding-top: 18px; border-top: 2px solid var(--encre); }
+        .check__total { font-size: 2.6rem; font-weight: 800; line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+        .check__total small { display: block; margin-top: 6px; font-size: .82rem; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+        .check__result .btn { padding: 13px 22px; font-size: .95rem; }
+
+        /* Vagues */
+        .waves { position: absolute; left: 0; bottom: -1px; width: 100%; height: 110px; overflow: hidden; pointer-events: none; }
+        .waves svg { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; animation: drift 22s linear infinite; }
+        .waves svg:nth-child(1) { opacity: .35; animation-duration: 34s; animation-direction: reverse; bottom: 12px; }
+        @keyframes drift { to { transform: translateX(-50%); } }
+
+        /* ---------- Titres de section ---------- */
+        .section { padding: 120px 0; }
+        .title { font-size: clamp(2.1rem, 4.6vw, 3.7rem); line-height: 1.04; letter-spacing: -.03em; font-weight: 700; font-variation-settings: "wdth" 88; max-width: 16em; }
+        .intro { margin-top: 20px; max-width: 36em; color: var(--muted); font-size: 1.1rem; }
+
+        /* ---------- Services ---------- */
+        .svc-list { margin-top: 64px; border-bottom: 1.5px solid var(--encre); }
+        .svc {
+            display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: start;
+            padding: 44px 24px; margin: 0 -24px; border-top: 1.5px solid var(--encre);
+            transition: background .4s var(--ease), color .4s var(--ease);
+        }
+        .svc h3 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); line-height: 1.05; letter-spacing: -.025em; font-weight: 700; font-variation-settings: "wdth" 88; }
+        .svc p { color: var(--muted); transition: color .4s; }
+        .svc__tech { margin-top: 16px; font-weight: 600; color: var(--mer); transition: color .4s; }
+        .svc:hover { background: var(--mer); color: var(--chaux); }
+        .svc:hover p { color: rgba(242, 243, 239, .85); }
+        .svc:hover .svc__tech { color: var(--soleil); }
+
+        /* ---------- Projets ---------- */
+        .works-section { background: var(--brume); }
+        .works { display: grid; grid-template-columns: repeat(12, 1fr); gap: 80px 24px; margin-top: 72px; }
+        .work:nth-child(odd) { grid-column: 1 / 6; }
+        .work:nth-child(even) { grid-column: 7 / 12; margin-top: 130px; }
+        .arch {
+            position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px 18px 18px; overflow: hidden;
+            display: grid; place-items: center;
+        }
+        .js .arch { clip-path: inset(42% 0 0 0 round 999px 999px 18px 18px); transition: clip-path 1.2s var(--ease); }
+        .js .arch.in { clip-path: inset(0 0 0 0 round 999px 999px 18px 18px); }
+        .arch svg { width: 74%; height: auto; transition: transform .8s var(--ease); }
+        .work:hover .arch svg { transform: scale(1.06) rotate(-2.5deg); }
+        .arch--mer { background: var(--mer); }
+        .arch--soleil { background: var(--soleil); }
+        .arch--encre { background: var(--encre); }
+        .arch--ciel { background: var(--ciel); }
+        .work h3 { margin-top: 26px; font-size: 1.6rem; line-height: 1.15; letter-spacing: -.02em; font-weight: 700; }
+        .work p { margin-top: 10px; color: var(--muted); max-width: 30em; }
+        .work__stack { margin-top: 14px; font-weight: 600; color: var(--mer); }
+
+        /* ---------- Méthode ---------- */
+        .process { background: var(--encre); color: var(--chaux); }
+        .process .title { color: var(--chaux); }
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 72px; }
+        .step { border-top: 1.5px solid rgba(242, 243, 239, .3); padding-top: 22px; transition: border-color .3s; }
+        .step:hover { border-color: var(--soleil); }
+        .step__n { font-size: 4.6rem; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: var(--ciel); opacity: .55; transition: color .3s, opacity .3s; font-variation-settings: "wdth" 80; }
+        .step:hover .step__n { color: var(--soleil); opacity: 1; }
+        .step h3 { margin-top: 18px; font-size: 1.3rem; font-weight: 700; }
+        .step p { margin-top: 8px; color: rgba(242, 243, 239, .72); font-size: .98rem; }
+
+        /* ---------- À propos ---------- */
+        .about { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .about p { font-size: 1.15rem; color: var(--muted); }
+        .facts { margin: 36px 0 0; padding: 0; list-style: none; }
+        .facts li { display: flex; gap: 18px; padding: 16px 0; border-top: 1px solid rgba(14, 18, 48, .18); font-weight: 500; }
+        .facts li:last-child { border-bottom: 1px solid rgba(14, 18, 48, .18); }
+        .facts span { min-width: 90px; color: var(--muted); font-weight: 400; }
+
+        /* ---------- Contact ---------- */
+        .contact { background: var(--mer); color: var(--chaux); }
+        .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .contact .title { color: var(--chaux); }
+        .contact .intro { color: rgba(242, 243, 239, .85); }
+        .form { display: grid; gap: 30px; }
+        .field label { display: block; font-size: .95rem; margin-bottom: 6px; color: rgba(242, 243, 239, .8); }
+        .field input, .field textarea {
+            width: 100%; background: transparent; border: 0; border-bottom: 1.5px solid rgba(242, 243, 239, .45);
+            color: var(--chaux); font: inherit; font-size: 1.15rem; padding: 8px 0 10px; border-radius: 0; resize: vertical;
+            transition: border-color .25s;
+        }
+        .field input::placeholder, .field textarea::placeholder { color: rgba(242, 243, 239, .38); }
+        .field input:focus, .field textarea:focus { outline: none; border-color: var(--soleil); }
+        .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--erreur); }
+        .form__status { min-height: 1.5em; font-size: .95rem; }
+        .form .btn { justify-self: start; }
+
+        /* ---------- Pied de page ---------- */
+        .footer { background: var(--encre); color: rgba(242, 243, 239, .7); padding: 36px 0; font-size: .95rem; }
+        .footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: center; }
+        .footer a { text-decoration: none; color: var(--chaux); }
+        .footer a:hover { color: var(--soleil); }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 920px) {
+            .hero__grid, .about, .contact__grid { grid-template-columns: 1fr; gap: 48px; }
+            .svc { grid-template-columns: 1fr; gap: 16px; }
+            .steps { grid-template-columns: 1fr 1fr; }
+            .works { grid-template-columns: 1fr; gap: 64px; }
+            .work:nth-child(odd), .work:nth-child(even) { grid-column: 1; margin-top: 0; }
+            .check, .check.load { transform: rotate(0); }
+            @keyframes fade-up-tilt { to { opacity: 1; transform: none; } }
+            .nav__toggle { display: block; }
+            .nav__links {
+                display: none; position: absolute; top: 68px; left: 0; width: 100%;
+                flex-direction: column; align-items: flex-start; gap: 18px;
+                padding: 12px 24px 28px; background: var(--mer);
+                box-shadow: 0 20px 30px rgba(14, 18, 48, .3);
+            }
+            .nav.open .nav__links { display: flex; }
+        }
+        @media (max-width: 560px) {
+            .section { padding: 84px 0; }
+            .steps { grid-template-columns: 1fr; }
+            .check { padding: 24px 20px; }
+            .check__result { flex-direction: column; align-items: flex-start; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .ln > span, .load { transform: none; opacity: 1; }
+            .check.load { transform: rotate(1.6deg); }
+            .js .arch { clip-path: none; }
+        }
+        /* Skip link */
+        .skip-link {
+            position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 100;
+        }
+        .skip-link:focus {
+            left: 16px; top: 16px; width: auto; height: auto; padding: 10px 16px;
+            background: var(--soleil); color: var(--encre); border-radius: 999px;
+            text-decoration: none; font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#top">Aller au contenu</a>
+
+    <header class="nav" id="nav">
+        <div class="wrap nav__bar">
+            <a href="#top" class="brand" aria-label="Amine - Accueil">
+                <!-- Logo Option 3 : Terminal >/, Palmier d'Alger, Soleil & Vague fléchée -->
+                <svg class="brand__logo" viewBox="0 0 64 52" fill="none" aria-hidden="true">
+                    <!-- Ligne d'horizon -->
+                    <path d="M6 47h52" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                    <!-- Palmier & Chevron > -->
+                    <path d="M14 34c0-8 1.2-15 3.5-21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+                    <path d="M17.5 13c-4.5-3-8.5-1.5-10.5 2M17.5 13c-2.5-4.5 1.5-7.5 5.5-6M17.5 13c4.5-2.5 8.5-.5 9.5 3M17.5 13c3 1.5 5.5 4.5 4.5 8M17.5 13c-4 1-7 4-7 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M9 24l13 8-13 8" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Slash / -->
+                    <path d="M31 20l-7 21" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>
+                    <!-- Soleil & Vague fléchée -->
+                    <g class="brand__logo-sun">
+                        <path d="M35 21a9 9 0 0 1 18 0" stroke="#FFC53D" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M44 7v2.5M36 10l1.8 1.8M52 10l-1.8 1.8M31.5 17h2.5M56 17h-2.5" stroke="#FFC53D" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M33 30c2 6.5 8.5 10 15 7.5 5-2 8-7.5 8-14M37.5 28c1.5 3.8 5.2 5.2 8.8 3.5 2.5-1.2 4.2-4 4.2-7.5" stroke="#FFC53D" stroke-width="2.8" stroke-linecap="round"/>
+                        <path d="M51 22l5.5-1.5 1.5 5.5" stroke="#FFC53D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                </svg>
+                <span>Amine</span>
+            </a>
+            <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
+                <a href="#services">Services</a>
+                <a href="#projets">Projets</a>
+                <a href="#methode">Méthode</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact" class="nav__cta">Me contacter</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="wrap hero__grid">
+                <div>
+                    <h1>
+                        <span class="ln ln--soft"><span style="--d:.1s">Vous avez un problème métier.</span></span>
+                        <span class="ln"><span style="--d:.28s">J'écris le code pour le résoudre.</span></span>
+                    </h1>
+                    <p class="hero__lead load" style="--d:.7s">
+                        Je suis Amine, développeur full-stack à Alger. Je conçois des applications sur-mesure, des tableaux de bord et des automatisations pour les entreprises qui en ont assez de bricoler.
+                    </p>
+                    <div class="hero__actions load" style="--d:.85s">
+                        <a href="#projets" class="btn btn--sun">Voir mon travail</a>
+                        <a href="#contact" class="btn btn--line">Démarrer un projet</a>
+                    </div>
+                </div>
+
+                <div class="check load" style="--d:.6s">
+                    <div class="check__head">
+                        <h2>Qu'est-ce qui vous prend du temps ?</h2>
+                        <button type="button" class="check__reset" id="reset-pains">Réinitialiser</button>
+                    </div>
+                    <p class="check__hint">Cochez ce qui vous concerne.</p>
+                    <div id="pains" role="group" aria-label="Tâches qui prennent du temps">
+                        <button type="button" class="row" role="checkbox" aria-checked="false" data-id="excel" data-h="3" data-t="Des fichiers Excel qui plantent">
+                            <span class="row__box"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg></span>
+                            <span class="row__label">Des fichiers Excel qui plantent</span><span class="row__hrs">3 h</span>
+                        </button>
+                        <button type="button" class="row" role="checkbox" aria-checked="false" data-id="papier" data-h="2" data-t="Des dossiers papier à retrouver">
+                            <span class="row__box"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg></span>
+                            <span class="row__label">Des dossiers papier à retrouver</span><span class="row__hrs">2 h</span>
+                        </button>
+                        <button type="button" class="row" role="checkbox" aria-checked="false" data-id="relances" data-h="2" data-t="Des relances faites à la main">
+                            <span class="row__box"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg></span>
+                            <span class="row__label">Des relances faites à la main</span><span class="row__hrs">2 h</span>
+                        </button>
+                        <button type="button" class="row" role="checkbox" aria-checked="false" data-id="rapports" data-h="4" data-t="Des rapports recopiés chaque semaine">
+                            <span class="row__box"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg></span>
+                            <span class="row__label">Des rapports recopiés chaque semaine</span><span class="row__hrs">4 h</span>
+                        </button>
+                        <button type="button" class="row" role="checkbox" aria-checked="false" data-id="demandes" data-h="2" data-t="Des demandes perdues entre appels et messages">
+                            <span class="row__box"><svg viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg></span>
+                            <span class="row__label">Des demandes perdues entre appels et messages</span><span class="row__hrs">2 h</span>
+                        </button>
+                    </div>
+                    <div class="check__result">
+                        <div class="check__total" aria-live="polite">≈ <span id="total">0</span> h<small>par semaine, ordre de grandeur à affiner ensemble</small></div>
+                        <button type="button" class="btn btn--mer" id="talk" disabled>Parler de ces points</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="waves" aria-hidden="true">
+                <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="#F2F3EF" d="M0 55 C240 0 480 110 720 55 C960 0 1200 110 1440 55 C1680 0 1920 110 2160 55 C2400 0 2640 110 2880 55 V110 H0Z"/></svg>
+                <svg viewBox="0 0 2880 110" preserveAspectRatio="none"><path fill="#F2F3EF" d="M0 55 C240 0 480 110 720 55 C960 0 1200 110 1440 55 C1680 0 1920 110 2160 55 C2400 0 2640 110 2880 55 V110 H0Z"/></svg>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section" id="services">
+            <div class="wrap">
+                <h2 class="title">Trois façons de reprendre la main sur votre activité.</h2>
+                <div class="svc-list">
+                    <article class="svc">
+                        <h3>Applications sur-mesure</h3>
+                        <div>
+                            <p>Vos process vivent dans des fichiers Excel et des dossiers papier. Je les remplace par une plateforme web fiable, pensée pour vos équipes et votre façon de travailler.</p>
+                            <p class="svc__tech">Java, PHP, JavaScript</p>
+                        </div>
+                    </article>
+                    <article class="svc">
+                        <h3>Tableaux de bord et outils internes</h3>
+                        <div>
+                            <p>Vos chiffres sont éparpillés dans plusieurs outils. Je les rassemble sur un seul écran clair, mis à jour automatiquement, pour décider sans attendre le rapport du lundi.</p>
+                            <p class="svc__tech">JavaScript, Supabase</p>
+                        </div>
+                    </article>
+                    <article class="svc">
+                        <h3>Automatisations et bots</h3>
+                        <div>
+                            <p>Connexion d'API, bots Discord sur-mesure, flux de travail automatisés : si une tâche se répète, elle peut être confiée à un programme.</p>
+                            <p class="svc__tech">TypeScript, Discord API</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets -->
+        <section class="section works-section" id="projets">
+            <div class="wrap">
+                <h2 class="title">Des problèmes réels, des outils livrés.</h2>
+                <div class="works">
+
+                    <article class="work">
+                        <div class="arch arch--mer">
+                            <svg viewBox="0 0 240 300" fill="none" stroke="#F2F3EF" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                                <rect x="30" y="60" width="180" height="48" rx="12"/><circle cx="56" cy="84" r="8" fill="#FFC53D" stroke="none"/><path d="M80 84h92"/>
+                                <rect x="30" y="126" width="180" height="48" rx="12"/><circle cx="56" cy="150" r="8" fill="#F2F3EF" stroke="none"/><path d="M80 150h70"/>
+                                <rect x="30" y="192" width="180" height="48" rx="12"/><circle cx="56" cy="216" r="8"/><path d="M80 216h104"/>
+                            </svg>
+                        </div>
+                        <h3>Gestion d'incidents IT pour une banque</h3>
+                        <p>Une plateforme de ticketing sécurisée conçue pour la Banque Al Baraka, afin de réduire le temps de résolution du support technique.</p>
+                        <p class="work__stack">Java, architecture applicative</p>
+                    </article>
+
+                    <article class="work">
+                        <div class="arch arch--soleil">
+                            <svg viewBox="0 0 240 300" fill="none" stroke="#0E1230" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                                <rect x="30" y="60" width="180" height="190" rx="16"/><path d="M30 106h180"/>
+                                <circle cx="62" cy="136" r="5" fill="#0E1230" stroke="none"/><circle cx="96" cy="136" r="5" fill="#0E1230" stroke="none"/><circle cx="130" cy="136" r="5" fill="#0E1230" stroke="none"/><circle cx="164" cy="136" r="5" fill="#0E1230" stroke="none"/>
+                                <circle cx="62" cy="168" r="5" fill="#0E1230" stroke="none"/><circle cx="96" cy="168" r="14" fill="#1F36D8" stroke="none"/><circle cx="130" cy="168" r="5" fill="#0E1230" stroke="none"/><circle cx="164" cy="168" r="5" fill="#0E1230" stroke="none"/>
+                                <circle cx="62" cy="200" r="5" fill="#0E1230" stroke="none"/><circle cx="96" cy="200" r="5" fill="#0E1230" stroke="none"/><circle cx="130" cy="200" r="5" fill="#0E1230" stroke="none"/><circle cx="164" cy="200" r="5" fill="#0E1230" stroke="none"/>
+                                <path d="M105 78v16M97 86h16"/>
+                            </svg>
+                        </div>
+                        <h3>Gestion d'un cabinet médical</h3>
+                        <p>Patients, rendez-vous et historique médical réunis dans une interface simple, pensée pour les professionnels de santé.</p>
+                        <p class="work__stack">PHP, JavaScript, CSS</p>
+                    </article>
+
+                    <article class="work">
+                        <div class="arch arch--encre">
+                            <svg viewBox="0 0 240 300" fill="none" aria-hidden="true">
+                                <rect x="30" y="60" width="150" height="50" rx="25" fill="#F2F3EF"/><path d="M56 85h70" stroke="#0E1230" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="60" y="130" width="150" height="50" rx="25" fill="#FFC53D"/><path d="M86 155h98" stroke="#0E1230" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="30" y="200" width="110" height="50" rx="25" fill="#4A63FF"/><circle cx="68" cy="225" r="5" fill="#F2F3EF"/><circle cx="85" cy="225" r="5" fill="#F2F3EF"/><circle cx="102" cy="225" r="5" fill="#F2F3EF"/>
+                            </svg>
+                        </div>
+                        <h3>Bots Discord pour escape games et communautés</h3>
+                        <p>CHRONO-OS et UAC-Bot : des bots complexes, conçus et déployés pour animer des escape games et gérer une communauté en temps réel.</p>
+                        <p class="work__stack">TypeScript, Supabase</p>
+                    </article>
+
+                    <article class="work">
+                        <div class="arch arch--ciel">
+                            <svg viewBox="0 0 240 300" fill="none" stroke="#0E1230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="40" y="70" width="160" height="40" rx="10" fill="#F2F3EF"/>
+                                <rect x="40" y="125" width="160" height="40" rx="10" fill="#F2F3EF"/>
+                                <rect x="40" y="180" width="160" height="40" rx="10" fill="#F2F3EF"/>
+                                <circle cx="65" cy="90" r="6" fill="#1F36D8" stroke="none"/>
+                                <circle cx="65" cy="145" r="6" fill="#1F36D8" stroke="none"/>
+                                <circle cx="65" cy="200" r="6" fill="#1F36D8" stroke="none"/>
+                                <path d="M85 90h95M85 145h80M85 200h70"/>
+                                <path d="M70 230h100" stroke-width="4"/>
+                            </svg>
+                        </div>
+                        <h3>Sites web pour écoles et établissements</h3>
+                        <p>Sites vitrines modernes pour écoles, lycées et centres de formation : actualités, emploi du temps, inscriptions et espace parents.</p>
+                        <p class="work__stack">HTML, CSS, JavaScript, PHP</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthode -->
+        <section class="section process" id="methode">
+            <div class="wrap">
+                <h2 class="title">Comment on travaille ensemble.</h2>
+                <div class="steps">
+                    <div class="step"><div class="step__n">1</div><h3>On parle du problème</h3><p>Je pose des questions sur votre quotidien, vos contraintes et ce qui coûte le plus cher en temps.</p></div>
+                    <div class="step"><div class="step__n">2</div><h3>Je conçois la solution</h3><p>Une architecture claire et un périmètre précis, validés avec vous avant d'écrire du code.</p></div>
+                    <div class="step"><div class="step__n">3</div><h3>Je développe par étapes</h3><p>Vous voyez l'outil prendre forme et vous pouvez corriger le tir en cours de route.</p></div>
+                    <div class="step"><div class="step__n">4</div><h3>Je livre et j'accompagne</h3><p>Mise en ligne, prise en main par vos équipes et suivi après la livraison.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- À propos -->
+        <section class="section" id="apropos">
+            <div class="wrap about">
+                <h2 class="title">Je préfère comprendre avant de construire.</h2>
+                <div>
+                    <p>J'aime savoir comment les choses fonctionnent sous le capot, pour bâtir des solutions qui tiennent dans la durée. Je ne vends pas des lignes de code : je livre des outils qui règlent un problème précis.</p>
+                    <ul class="facts">
+                        <li><span>Basé à</span>Alger, il est <strong id="clock" aria-live="polite">--:--</strong> chez moi</li>
+                        <li><span>Statut</span>Auto-entrepreneur agréé, facturation professionnelle en Algérie</li>
+                        <li><span>Outils</span>Java, PHP, JavaScript, TypeScript, Supabase, Unity et C#</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact" id="contact">
+            <div class="wrap contact__grid">
+                <div>
+                    <h2 class="title">Parlons de votre projet.</h2>
+                    <p class="intro">Un besoin précis, une idée à tester ou un fichier Excel qui ne tient plus : décrivez-moi la situation et je reviens vers vous avec une première piste.</p>
+                </div>
+
+                <form class="form" id="contact-form" action="https://formspree.io/f/xnppdozj" method="POST" novalidate>
+                    <!-- Champ Honeypot anti-spam -->
+                    <input type="text" name="_gotcha" id="gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <div class="field">
+                        <label for="name">Nom ou entreprise</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="message">De quoi avez-vous besoin ?</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Décrivez votre problème métier"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--sun" id="submit-btn">Envoyer le message</button>
+                    <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <span>© 2026 Amine, développeur full-stack à Alger.</span>
+            <a href="#top" aria-label="Retour en haut de page">Retour en haut ↑</a>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* Barre de navigation : se cache en descendant, revient en remontant + gestion focus/clic extérieur */
+        var nav = document.getElementById('nav'), toggle = document.getElementById('nav-toggle'), lastY = 0;
+        
+        function closeMenu(restoreFocus) {
+            if (!nav.classList.contains('open')) return;
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            if (restoreFocus) toggle.focus();
+        }
+
+        window.addEventListener('scroll', function () {
+            var y = window.scrollY;
+            nav.classList.toggle('nav--scrolled', y > 20);
+            if (y > lastY && y > 160 && !nav.classList.contains('open')) nav.classList.add('nav--hidden');
+            else if (y < lastY) nav.classList.remove('nav--hidden');
+            lastY = y;
+        }, { passive: true });
+
+        toggle.addEventListener('click', function () {
+            var open = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', String(open));
+            if (open) {
+                var firstLink = document.querySelector('#nav-links a');
+                if (firstLink) firstLink.focus();
+            }
+        });
+
+        document.querySelectorAll('#nav-links a').forEach(function (a) {
+            a.addEventListener('click', function () { closeMenu(false); });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeMenu(true);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (nav.classList.contains('open') && !nav.contains(e.target)) {
+                closeMenu(false);
+            }
+        });
+
+        /* Heure à Alger */
+        var clock = document.getElementById('clock');
+        function tick() {
+            try {
+                clock.textContent = new Intl.DateTimeFormat('fr-FR', {
+                    hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Algiers'
+                }).format(new Date());
+            } catch (e) {}
+        }
+        tick();
+        setInterval(tick, 30000);
+
+        /* Liste à cocher interactive avec sauvegarde localStorage */
+        var STORAGE_KEY = 'amine_portfolio_pains';
+        var rows = document.querySelectorAll('.row'),
+            totalEl = document.getElementById('total'),
+            talk = document.getElementById('talk'),
+            resetBtn = document.getElementById('reset-pains');
+        var shown = 0, raf;
+
+        function animateTo(target) {
+            cancelAnimationFrame(raf);
+            if (reduce) { shown = target; totalEl.textContent = target; return; }
+            var from = shown, start = performance.now(), dur = 450;
+            (function step(now) {
+                var t = Math.min((now - start) / dur, 1), e = 1 - Math.pow(1 - t, 3);
+                shown = Math.round(from + (target - from) * e);
+                totalEl.textContent = shown;
+                if (t < 1) raf = requestAnimationFrame(step);
+            })(start);
+        }
+
+        function saveState(selectedIds) {
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds)); } catch (e) {}
+        }
+
+        function recompute() {
+            var sum = 0, selectedIds = [];
+            rows.forEach(function (r) {
+                if (r.getAttribute('aria-checked') === 'true') {
+                    sum += +r.dataset.h;
+                    selectedIds.push(r.dataset.id);
+                }
+            });
+            animateTo(sum);
+            talk.disabled = sum === 0;
+            resetBtn.classList.toggle('visible', sum > 0);
+            saveState(selectedIds);
+        }
+
+        /* Restauration depuis localStorage au chargement */
+        try {
+            var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            if (Array.isArray(saved) && saved.length) {
+                rows.forEach(function (r) {
+                    if (saved.indexOf(r.dataset.id) !== -1) r.setAttribute('aria-checked', 'true');
+                });
+                recompute();
+            }
+        } catch (e) {}
+
+        rows.forEach(function (r) {
+            r.addEventListener('click', function () {
+                r.setAttribute('aria-checked', r.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+                recompute();
+            });
+        });
+
+        resetBtn.addEventListener('click', function () {
+            rows.forEach(function (r) { r.setAttribute('aria-checked', 'false'); });
+            recompute();
+        });
+
+        talk.addEventListener('click', function () {
+            var items = [];
+            rows.forEach(function (r) { if (r.getAttribute('aria-checked') === 'true') items.push('- ' + r.dataset.t); });
+            var msgField = document.getElementById('message');
+            msgField.value = 'Bonjour Amine,\n\nVoici ce qui nous fait perdre du temps en ce moment :\n' + items.join('\n') + '\n\nPouvons-nous en discuter ?';
+            msgField.setAttribute('aria-invalid', 'false');
+            document.getElementById('contact').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+            setTimeout(function () { document.getElementById('name').focus({ preventScroll: true }); }, reduce ? 0 : 700);
+        });
+
+        /* Les arches se lèvent quand elles entrent à l'écran */
+        var arches = document.querySelectorAll('.arch');
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+            }, { threshold: 0.2 });
+            arches.forEach(function (a) { io.observe(a); });
+        } else {
+            arches.forEach(function (a) { a.classList.add('in'); });
+        }
+
+        /* Formulaire de contact sécurisé */
+        var form = document.getElementById('contact-form'),
+            status = document.getElementById('form-status'),
+            btn = document.getElementById('submit-btn'),
+            gotcha = document.getElementById('gotcha'),
+            fields = [document.getElementById('name'), document.getElementById('email'), document.getElementById('message')];
+
+        fields.forEach(function (f) {
+            f.addEventListener('input', function () { f.setAttribute('aria-invalid', 'false'); });
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            /* Blocage silencieux des robots (Honeypot) */
+            if (gotcha && gotcha.value.trim() !== '') {
+                form.reset();
+                status.style.color = 'rgba(242, 243, 239, .9)';
+                status.textContent = 'Message envoyé. Je vous réponds dès que possible.';
+                return;
+            }
+
+            var name = fields[0], email = fields[1], message = fields[2];
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var validName = name.value.trim().length > 0;
+            var validEmail = emailRegex.test(email.value.trim());
+            var validMsg = message.value.trim().length > 0;
+
+            name.setAttribute('aria-invalid', String(!validName));
+            email.setAttribute('aria-invalid', String(!validEmail));
+            message.setAttribute('aria-invalid', String(!validMsg));
+
+            if (!validName || !validEmail || !validMsg) {
+                status.textContent = 'Merci de remplir tous les champs obligatoires avec un email valide.';
+                status.style.color = '#FFC53D';
+                if (!validName) name.focus();
+                else if (!validEmail) email.focus();
+                else message.focus();
+                return;
+            }
+
+            status.textContent = '';
+            btn.disabled = true;
+            btn.textContent = 'Envoi en cours…';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            })
+            .then(function (res) {
+                if (!res.ok) throw new Error();
+                form.reset();
+                status.style.color = 'rgba(242, 243, 239, .9)';
+                status.textContent = 'Message envoyé. Je vous réponds dès que possible.';
+            })
+            .catch(function () {
+                status.style.color = '#FFC53D';
+                status.textContent = "L'envoi a échoué. Vérifiez votre connexion et réessayez.";
+            })
+            .finally(function () {
+                btn.disabled = false;
+                btn.textContent = 'Envoyer le message';
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
